@@ -1,47 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | EX-Ray</title>
-    <style>
-        body { background-color: #050706; color: rgba(255,255,255,0.8); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
-        h1, h2 { color: #2ca593; font-weight: 800; }
-        h1 { border-bottom: 2px solid #1A1C1B; padding-bottom: 10px; font-size: 2.5em; }
-        .date { color: #2ca593; font-size: 0.9em; margin-bottom: 40px; }
-        strong { color: #fff; }
-        .section-box { border: 1px solid #1A1C1B; padding: 20px; border-radius: 8px; margin: 20px 0; }
-        .footer { margin-top: 50px; border-top: 1px solid #1A1C1B; padding-top: 20px; font-size: 0.8em; text-align: center; }
-        a { color: #2ca593; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · EX-Ray</title>
+<meta name="description" content="How EX-Ray collects, uses, and protects your data.">
+<style>
+  :root{
+    --bg:#050706; --card:#0c100e; --line:#161a18; --line-2:#1f2421;
+    --teal:#2ca593; --teal-soft:rgba(44,165,147,.12);
+    --text:#c7cfcc; --dim:#7e8784; --white:#fff; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.72;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 480px at 50% -140px,rgba(44,165,147,.20),transparent 70%);
+    background-repeat:no-repeat;
+  }
+  ::selection{background:var(--teal);color:#021;}
+  .wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px;}
+  .brand{display:flex;align-items:center;gap:13px;margin-bottom:48px;}
+  .brand .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(160deg,#10231f,#0a1411);
+    border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;flex:none;}
+  .brand .name{font-weight:800;letter-spacing:.4px;color:#fff;font-size:18px;line-height:1.1;}
+  .brand .name span{color:var(--teal);}
+  .brand .tag{font-size:12px;color:var(--dim);letter-spacing:.4px;margin-top:2px;}
+  h1{font-size:clamp(2em,6vw,2.7em);line-height:1.08;font-weight:800;color:#fff;margin:0 0 16px;letter-spacing:-.6px;}
+  .meta{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--teal);background:var(--teal-soft);
+    border:1px solid rgba(44,165,147,.25);padding:6px 13px;border-radius:999px;font-weight:600;margin-bottom:18px;}
+  .meta .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+  .lead{color:var(--dim);font-size:1.04em;margin:0 0 34px;}
+  .toc{border:1px solid var(--line);background:rgba(255,255,255,.015);border-radius:var(--radius);padding:20px 22px;margin-bottom:42px;}
+  .toc h4{margin:0 0 14px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:700;}
+  .toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:26px;}
+  .toc li{margin:0 0 9px;break-inside:avoid;font-size:14px;}
+  .toc a{color:var(--text);} .toc a:hover{color:var(--teal);}
+  section{padding:28px 0;border-top:1px solid var(--line);}
+  h2{font-size:1.3em;font-weight:800;color:#fff;margin:0 0 15px;display:flex;align-items:center;gap:13px;letter-spacing:-.2px;scroll-margin-top:20px;}
+  h2 .num{flex:none;font-size:13px;font-weight:700;color:var(--teal);width:28px;height:28px;border-radius:8px;
+    background:var(--teal-soft);border:1px solid rgba(44,165,147,.25);display:flex;align-items:center;justify-content:center;}
+  p{margin:0 0 14px;}
+  strong{color:#fff;font-weight:600;}
+  a{color:var(--teal);text-decoration:none;font-weight:600;}
+  a:hover{text-decoration:underline;}
+  ul{margin:0 0 14px;padding-left:0;list-style:none;}
+  ul li{position:relative;padding-left:22px;margin-bottom:10px;}
+  ul li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal);}
+  .callout{background:var(--card);border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .callout .label{display:block;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:7px;}
+  .footer{margin-top:54px;border-top:1px solid var(--line);padding-top:26px;font-size:13px;color:var(--dim);
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;}
+  .footer a{font-weight:600;}
+  @media(max-width:560px){.toc ol{columns:1;}.wrap{padding:42px 18px 64px;}}
+</style>
 </head>
 <body>
-    <h1>Privacy Policy</h1>
-    <p class="date">Effective Date: April 20, 2026</p>
+<div class="wrap">
 
-    <h2>1. Introduction</h2>
-    <p>Welcome to <strong>EX-Ray</strong>. We respect your privacy and are committed to protecting your personal data. This policy explains how we handle your information when using our app.</p>
-
-    <h2>2. Data We Process</h2>
-    <p><strong>Visual Evidence:</strong> Screenshots you upload are transmitted via encrypted channels (TLS/SSL) to Google Gemini API for real-time analysis. We do not store the original image files on our permanent servers once the analysis is complete.</p>
-    <p><strong>Profile Data:</strong> We store your name, partner's name, and relationship context to maintain your personal history and provide a tailored experience.</p>
-
-    <h2>3. Data Sharing & Third Parties</h2>
-    <p>We share the text and images you provide with <strong>Google Gemini AI</strong> for processing. We do not sell your personal data to third-party advertisers. All data processing is done under strict security protocols to ensure your information remains confidential.</p>
-
-    <div class="section-box" id="deletion">
-        <h2>4. Account Deletion & Data Request</h2>
-        <p>You have the right to access, update, or delete your data at any time. You can delete your account directly through the "Profile" section in the app.</p>
-        <p>Alternatively, users can request full account and data deletion by sending an email to <a href="mailto:markoandrijevic27@gmail.com">markoandrijevic27@gmail.com</a> with the subject <strong>"Account Deletion Request"</strong>.</p>
-        <p>Upon request, all associated data, including account info, analysis history, and references to uploaded images, will be permanently deleted from our servers within <strong>30 days</strong>.</p>
+  <div class="brand">
+    <div class="mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M3 12h3l2-5 4 10 2-5h7" stroke="#2ca593" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
-
-    <h2>5. Security</h2>
-    <p>We implement industry-standard encryption to protect your data during transmission and at rest. However, no method of electronic transmission is 100% secure.</p>
-
-    <div class="footer">
-        © 2026 M2Code - <a href="terms.html">Terms of Service</a>
+    <div>
+      <div class="name">EX<span>-</span>RAY</div>
+      <div class="tag">Relationship Analyzer · by M2Code</div>
     </div>
+  </div>
+
+  <span class="meta"><span class="dot"></span>Last updated: June 29, 2026</span>
+  <h1>Privacy Policy</h1>
+  <p class="lead">Your conversations are personal. This policy explains, in plain language, what data EX-Ray collects, how our AI processes it, who we work with, and the control you have over your information.</p>
+
+  <div class="callout">
+    <span class="label">In short</span>
+    We only collect what we need to run your analyses and keep your history. Screenshots are sent securely to our AI for processing and are not kept as part of your permanent profile. We never sell your data, and you can delete everything at any time.
+  </div>
+
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#s1">1. Who We Are</a></li>
+      <li><a href="#s2">2. Information We Collect</a></li>
+      <li><a href="#s3">3. How We Use Your Data</a></li>
+      <li><a href="#s4">4. How the AI Analysis Works</a></li>
+      <li><a href="#s5">5. Third-Party Services</a></li>
+      <li><a href="#s6">6. Screenshots & Other People</a></li>
+      <li><a href="#s7">7. Data Retention</a></li>
+      <li><a href="#s8">8. How We Share Data</a></li>
+      <li><a href="#s9">9. Your Privacy Rights</a></li>
+      <li><a href="#s10">10. Account & Data Deletion</a></li>
+      <li><a href="#s11">11. Data Security</a></li>
+      <li><a href="#s12">12. Children’s Privacy</a></li>
+      <li><a href="#s13">13. International Transfers</a></li>
+      <li><a href="#s14">14. Changes to This Policy</a></li>
+      <li><a href="#s15">15. Contact Us</a></li>
+    </ol>
+  </div>
+
+  <section id="s1">
+    <h2><span class="num">1</span>Who We Are</h2>
+    <p><strong>EX-Ray</strong> (“EX-Ray”, “the app”, “we”, “us”) is operated by <strong>M2Code</strong>, based in Serbia. EX-Ray helps you understand relationship dynamics by using artificial intelligence to analyze conversation screenshots and the context you provide. This policy applies to the EX-Ray mobile application on iOS and Android.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="num">2</span>Information We Collect</h2>
+    <p>We only collect data that is necessary to operate the app:</p>
+    <ul>
+      <li><strong>Account &amp; identity.</strong> If you sign in with Apple or Google, we receive your name and email address (Apple may provide a private relay email). If you continue as a Guest, we generate an anonymous local ID — no sign-in or personal identity is collected.</li>
+      <li><strong>Relationship context.</strong> Information you voluntarily enter: your first name, the other person’s name, genders, relationship status, duration, and the situation or concern you describe.</li>
+      <li><strong>Conversation screenshots.</strong> Images you upload for analysis, which may contain messages, names, and other content involving you and other people.</li>
+      <li><strong>Analysis history.</strong> The AI-generated reports we create and store so you can revisit them.</li>
+      <li><strong>Subscription data.</strong> Your subscription status, plan, and purchase history, provided to us by RevenueCat and the app stores. We never receive or store your full payment-card details.</li>
+      <li><strong>Technical data.</strong> Your chosen app language, device/OS type, and basic diagnostic information used to keep the app stable.</li>
+    </ul>
+  </section>
+
+  <section id="s3">
+    <h2><span class="num">3</span>How We Use Your Data</h2>
+    <ul>
+      <li>To generate your AI analysis and the recommended next steps.</li>
+      <li>To save and display your personal analysis history.</li>
+      <li>To verify and manage your subscription and unlock entitlements.</li>
+      <li>To maintain, secure, debug, and improve the app.</li>
+      <li>To respond to your support requests.</li>
+      <li>To comply with legal obligations.</li>
+    </ul>
+  </section>
+
+  <section id="s4">
+    <h2><span class="num">4</span>How the AI Analysis Works</h2>
+    <p>When you request an analysis, your screenshots and the context you entered are transmitted over an encrypted connection (TLS) to the <strong>Google Gemini API</strong>, which processes them in real time and returns a structured psychological-style analysis. We use your content <strong>only</strong> to generate your result — we do not use it to train our own models, and we do not build advertising profiles from it.</p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="num">5</span>Third-Party Services</h2>
+    <p>We rely on a small number of trusted providers (“sub-processors”) to run EX-Ray. Each receives only the data needed for its function:</p>
+    <ul>
+      <li><strong>Google Gemini</strong> — AI processing of your screenshots and context.</li>
+      <li><strong>Supabase</strong> — secure cloud database, authentication, and storage for your account and history.</li>
+      <li><strong>RevenueCat</strong> — subscription management and entitlement verification.</li>
+      <li><strong>Apple &amp; Google</strong> — sign-in and payment processing through the App Store and Google Play.</li>
+    </ul>
+    <p>These providers maintain their own privacy and security practices and process data under their respective terms.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="num">6</span>Screenshots &amp; Other People</h2>
+    <p>Conversation screenshots may contain personal information about other people. <strong>You are responsible</strong> for ensuring you have the legal right or consent to upload and analyze any content you submit. Please do not upload material you are not permitted to share. We treat all uploaded content as confidential and use it solely to provide your analysis.</p>
+  </section>
+
+  <section id="s7">
+    <h2><span class="num">7</span>Data Retention</h2>
+    <p>We keep your account data and analysis history for as long as your account is active. Uploaded screenshot images are transmitted for processing and are <strong>not retained as part of your permanent profile</strong> once the analysis is generated. When you delete your account or request deletion, your associated data is permanently removed from our servers within <strong>30 days</strong>.</p>
+  </section>
+
+  <section id="s8">
+    <h2><span class="num">8</span>How We Share Data</h2>
+    <p>We share data only with the sub-processors listed in Section 5, strictly to operate the app, and where required by law. <strong>We do not sell your personal data</strong> and we do not share it with third-party advertisers.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="num">9</span>Your Privacy Rights</h2>
+    <p>Depending on where you live (including under the GDPR and CCPA), you may have the right to access, correct, delete, or export your data, to withdraw consent, and to object to or restrict certain processing. To exercise these rights, use the in-app tools or contact us (Section 15). You also have the right to lodge a complaint with your local data protection authority.</p>
+  </section>
+
+  <section id="s10">
+    <h2><span class="num">10</span>Account &amp; Data Deletion</h2>
+    <div class="callout">
+      <span class="label">Delete your data</span>
+      You can delete your account directly in the <strong>Profile</strong> section of the app. Alternatively, email <a href="mailto:markoandrijevic27@gmail.com">markoandrijevic27@gmail.com</a> with the subject <strong>“Account Deletion Request.”</strong> All associated data — account info, analysis history, and any references to uploaded images — is permanently deleted within <strong>30 days</strong>.
+    </div>
+  </section>
+
+  <section id="s11">
+    <h2><span class="num">11</span>Data Security</h2>
+    <p>We use industry-standard encryption to protect your data in transit (TLS/SSL) and at rest, along with access controls limiting who can reach it. No method of electronic transmission or storage is 100% secure, but we work continuously to safeguard your information.</p>
+  </section>
+
+  <section id="s12">
+    <h2><span class="num">12</span>Children’s Privacy</h2>
+    <p>EX-Ray is intended for adults and is not directed to anyone under the age of 17 (or the minimum age of digital consent in your country). We do not knowingly collect data from children. If you believe a minor has provided us data, contact us and we will remove it.</p>
+  </section>
+
+  <section id="s13">
+    <h2><span class="num">13</span>International Transfers</h2>
+    <p>Our providers may process and store data on servers located outside your country, including in the United States and the European Union. Where required, we rely on appropriate safeguards to protect your information during such transfers.</p>
+  </section>
+
+  <section id="s14">
+    <h2><span class="num">14</span>Changes to This Policy</h2>
+    <p>We may update this policy from time to time. When we do, we will revise the “Last updated” date above, and we will notify you of material changes within the app. Continued use of EX-Ray after an update means you accept the revised policy.</p>
+  </section>
+
+  <section id="s15">
+    <h2><span class="num">15</span>Contact Us</h2>
+    <p>Questions about this policy or your data? Email us at <a href="mailto:markoandrijevic27@gmail.com">markoandrijevic27@gmail.com</a>.</p>
+  </section>
+
+  <div class="footer">
+    <span>© 2026 M2Code · EX-Ray</span>
+    <span><a href="terms.html">Terms of Service</a> · <a href="#top">Back to top</a></span>
+  </div>
+
+</div>
 </body>
 </html>
