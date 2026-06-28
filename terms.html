@@ -1,37 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | EX-Ray</title>
-    <style>
-        body { background-color: #050706; color: rgba(255,255,255,0.8); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
-        h1, h2 { color: #2ca593; font-weight: 800; }
-        h1 { border-bottom: 2px solid #1A1C1B; padding-bottom: 10px; font-size: 2.5em; }
-        .highlight { color: #fff; background: rgba(44, 165, 147, 0.1); padding: 2px 5px; border-radius: 4px; }
-        .footer { margin-top: 50px; border-top: 1px solid #1A1C1B; padding-top: 20px; font-size: 0.8em; text-align: center; }
-        a { color: #2ca593; text-decoration: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service · EX-Ray</title>
+<meta name="description" content="The terms governing your use of the EX-Ray app.">
+<style>
+  :root{
+    --bg:#050706; --card:#0c100e; --line:#161a18; --line-2:#1f2421;
+    --teal:#2ca593; --teal-soft:rgba(44,165,147,.12); --amber:#e0b341;
+    --text:#c7cfcc; --dim:#7e8784; --white:#fff; --radius:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.72;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(900px 480px at 50% -140px,rgba(44,165,147,.20),transparent 70%);
+    background-repeat:no-repeat;
+  }
+  ::selection{background:var(--teal);color:#021;}
+  .wrap{max-width:760px;margin:0 auto;padding:56px 22px 80px;}
+  .brand{display:flex;align-items:center;gap:13px;margin-bottom:48px;}
+  .brand .mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(160deg,#10231f,#0a1411);
+    border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;flex:none;}
+  .brand .name{font-weight:800;letter-spacing:.4px;color:#fff;font-size:18px;line-height:1.1;}
+  .brand .name span{color:var(--teal);}
+  .brand .tag{font-size:12px;color:var(--dim);letter-spacing:.4px;margin-top:2px;}
+  h1{font-size:clamp(2em,6vw,2.7em);line-height:1.08;font-weight:800;color:#fff;margin:0 0 16px;letter-spacing:-.6px;}
+  .meta{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--teal);background:var(--teal-soft);
+    border:1px solid rgba(44,165,147,.25);padding:6px 13px;border-radius:999px;font-weight:600;margin-bottom:18px;}
+  .meta .dot{width:7px;height:7px;border-radius:50%;background:var(--teal);}
+  .lead{color:var(--dim);font-size:1.04em;margin:0 0 34px;}
+  .toc{border:1px solid var(--line);background:rgba(255,255,255,.015);border-radius:var(--radius);padding:20px 22px;margin-bottom:42px;}
+  .toc h4{margin:0 0 14px;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);font-weight:700;}
+  .toc ol{margin:0;padding:0;list-style:none;columns:2;column-gap:26px;}
+  .toc li{margin:0 0 9px;break-inside:avoid;font-size:14px;}
+  .toc a{color:var(--text);} .toc a:hover{color:var(--teal);}
+  section{padding:28px 0;border-top:1px solid var(--line);}
+  h2{font-size:1.3em;font-weight:800;color:#fff;margin:0 0 15px;display:flex;align-items:center;gap:13px;letter-spacing:-.2px;scroll-margin-top:20px;}
+  h2 .num{flex:none;font-size:13px;font-weight:700;color:var(--teal);width:28px;height:28px;border-radius:8px;
+    background:var(--teal-soft);border:1px solid rgba(44,165,147,.25);display:flex;align-items:center;justify-content:center;}
+  p{margin:0 0 14px;}
+  strong{color:#fff;font-weight:600;}
+  a{color:var(--teal);text-decoration:none;font-weight:600;}
+  a:hover{text-decoration:underline;}
+  ul{margin:0 0 14px;padding-left:0;list-style:none;}
+  ul li{position:relative;padding-left:22px;margin-bottom:10px;}
+  ul li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--teal);}
+  .callout{background:var(--card);border:1px solid var(--line-2);border-left:3px solid var(--teal);border-radius:12px;padding:18px 20px;margin:18px 0;}
+  .callout.warn{border-left-color:var(--amber);}
+  .callout .label{display:block;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:7px;}
+  .callout.warn .label{color:var(--amber);}
+  .footer{margin-top:54px;border-top:1px solid var(--line);padding-top:26px;font-size:13px;color:var(--dim);
+    display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;}
+  .footer a{font-weight:600;}
+  @media(max-width:560px){.toc ol{columns:1;}.wrap{padding:42px 18px 64px;}}
+</style>
 </head>
 <body>
-    <h1>Terms of Service</h1>
-    <p>Last Updated: April 14, 2026</p>
+<div class="wrap">
 
-    <h2>1. Nature of Service</h2>
-    <p class="highlight">EX-Ray is an AI-powered analysis tool intended for informational and entertainment purposes only.</p>
-    <p>The insights provided are generated by Artificial Intelligence and may be inaccurate. EX-Ray is <strong>NOT</strong> a substitute for professional mental health advice or counseling.</p>
-
-    <h2>2. User Content</h2>
-    <p>You represent that you have the legal right or consent to use any screenshots uploaded for analysis. EX-Ray disclaims any liability regarding third-party content uploaded by users.</p>
-
-    <h2>3. Prohibited Use</h2>
-    <p>You agree not to use this app for stalking, harassment, or any activity that violates the privacy of others.</p>
-
-    <h2>4. Limitation of Liability</h2>
-    <p>M2Code shall not be liable for any personal or emotional outcomes resulting from the use of AI-generated insights.</p>
-
-    <div class="footer">
-        © 2026 M2Code - <a href="index.html">Privacy Policy</a>
+  <div class="brand">
+    <div class="mark">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M3 12h3l2-5 4 10 2-5h7" stroke="#2ca593" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
+    <div>
+      <div class="name">EX<span>-</span>RAY</div>
+      <div class="tag">Relationship Analyzer · by M2Code</div>
+    </div>
+  </div>
+
+  <span class="meta"><span class="dot"></span>Last updated: June 29, 2026</span>
+  <h1>Terms of Service</h1>
+  <p class="lead">These Terms govern your use of the EX-Ray app. Please read them carefully — by using EX-Ray, you agree to everything below, including how our subscriptions work and the limits of an AI-generated analysis.</p>
+
+  <div class="toc">
+    <h4>Contents</h4>
+    <ol>
+      <li><a href="#s1">1. Agreement to Terms</a></li>
+      <li><a href="#s2">2. The Service &amp; AI Disclaimer</a></li>
+      <li><a href="#s3">3. Eligibility</a></li>
+      <li><a href="#s4">4. Your Account</a></li>
+      <li><a href="#s5">5. User Content &amp; Consent</a></li>
+      <li><a href="#s6">6. Acceptable Use</a></li>
+      <li><a href="#s7">7. Subscriptions &amp; Auto-Renewal</a></li>
+      <li><a href="#s8">8. Refunds &amp; Cancellations</a></li>
+      <li><a href="#s9">9. App Store &amp; Platform Terms</a></li>
+      <li><a href="#s10">10. Intellectual Property</a></li>
+      <li><a href="#s11">11. Disclaimer of Warranties</a></li>
+      <li><a href="#s12">12. Limitation of Liability</a></li>
+      <li><a href="#s13">13. Indemnification</a></li>
+      <li><a href="#s14">14. Termination</a></li>
+      <li><a href="#s15">15. Governing Law</a></li>
+      <li><a href="#s16">16. Changes to These Terms</a></li>
+      <li><a href="#s17">17. Contact</a></li>
+    </ol>
+  </div>
+
+  <section id="s1">
+    <h2><span class="num">1</span>Agreement to Terms</h2>
+    <p>By downloading, accessing, or using <strong>EX-Ray</strong>, operated by <strong>M2Code</strong> (“we”, “us”), you agree to be bound by these Terms of Service and our <a href="index.html">Privacy Policy</a>. If you do not agree, please do not use the app.</p>
+  </section>
+
+  <section id="s2">
+    <h2><span class="num">2</span>The Service &amp; AI Disclaimer</h2>
+    <div class="callout warn">
+      <span class="label">Important — please read</span>
+      EX-Ray is an AI-powered tool for <strong>informational and entertainment purposes only</strong>. Its insights are generated by artificial intelligence (Google Gemini), are probabilistic, and may be inaccurate, incomplete, or biased. EX-Ray is <strong>NOT</strong> a substitute for professional psychological, medical, or legal advice, and is not a diagnostic tool. Do not make significant life decisions based solely on its output. If you are in distress, please contact a qualified professional or a local support service.
+    </div>
+  </section>
+
+  <section id="s3">
+    <h2><span class="num">3</span>Eligibility</h2>
+    <p>You must be at least 17 years old, or the age of majority in your jurisdiction, to use EX-Ray. By using the app, you represent and warrant that you meet this requirement.</p>
+  </section>
+
+  <section id="s4">
+    <h2><span class="num">4</span>Your Account</h2>
+    <p>You may use EX-Ray as a Guest or by signing in with Apple or Google. You are responsible for activity under your account and for keeping your sign-in credentials secure. Guest data may be stored locally on your device and can be lost if the app is removed.</p>
+  </section>
+
+  <section id="s5">
+    <h2><span class="num">5</span>User Content &amp; Consent</h2>
+    <div class="callout">
+      <span class="label">Your responsibility</span>
+      You represent that you have the legal right or consent to upload and analyze any screenshots or content you submit. You are solely responsible for your content, and you must not upload anything that infringes the privacy, intellectual property, or other rights of any person.
+    </div>
+    <p>You retain ownership of your content. You grant M2Code a limited, non-exclusive license to process it solely for the purpose of providing your analysis.</p>
+  </section>
+
+  <section id="s6">
+    <h2><span class="num">6</span>Acceptable Use</h2>
+    <p>You agree not to use EX-Ray to:</p>
+    <ul>
+      <li>Stalk, harass, monitor, surveil, or threaten any person.</li>
+      <li>Violate the privacy or rights of others, or upload unlawful content.</li>
+      <li>Break any applicable law or regulation.</li>
+      <li>Reverse-engineer, scrape, overload, or abuse the app or its underlying services.</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <h2><span class="num">7</span>Subscriptions &amp; Auto-Renewal</h2>
+    <p>EX-Ray offers auto-renewable subscriptions that unlock full analyses and features. Plans include <strong>Weekly, Monthly, and Annual</strong> options (for example, $2.99 / $7.99 / $39.99 USD; prices are shown in-app and may vary by region).</p>
+    <ul>
+      <li>Payment is charged to your Apple ID or Google Play account upon confirmation of purchase.</li>
+      <li>Subscriptions <strong>automatically renew</strong> at the then-current price unless auto-renew is turned off at least <strong>24 hours before</strong> the end of the current period.</li>
+      <li>Your account is charged for renewal within 24 hours prior to the end of the current period.</li>
+      <li>You can manage or cancel your subscription anytime in your <strong>App Store</strong> or <strong>Google Play</strong> account settings.</li>
+      <li>Canceling stops future renewals; you keep access until the end of the period you already paid for. <strong>Deleting the app does not cancel a subscription.</strong></li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <h2><span class="num">8</span>Refunds &amp; Cancellations</h2>
+    <p>All purchases are processed by Apple and Google, and refunds are governed by their policies — we are generally unable to issue refunds directly. To request a refund, contact Apple at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> or use the Google Play Store, as applicable.</p>
+  </section>
+
+  <section id="s9">
+    <h2><span class="num">9</span>App Store &amp; Platform Terms</h2>
+    <p>This agreement is between you and <strong>M2Code</strong> only, and not with Apple or Google. The platform providers are not responsible for the app or its content and have no obligation to provide support or maintenance. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you. Your use of the app must also comply with the applicable App Store and Google Play Terms of Service.</p>
+  </section>
+
+  <section id="s10">
+    <h2><span class="num">10</span>Intellectual Property</h2>
+    <p>EX-Ray, including its name, branding, mascot, design, and software, is owned by M2Code and protected by law. We grant you a limited, revocable, non-transferable license to use the app for your personal, non-commercial use. All content you provide remains yours.</p>
+  </section>
+
+  <section id="s11">
+    <h2><span class="num">11</span>Disclaimer of Warranties</h2>
+    <p>EX-Ray is provided on an <strong>“as is”</strong> and <strong>“as available”</strong> basis, without warranties of any kind, whether express or implied, including accuracy, reliability, availability, or fitness for a particular purpose.</p>
+  </section>
+
+  <section id="s12">
+    <h2><span class="num">12</span>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, M2Code shall not be liable for any indirect, incidental, consequential, or emotional damages arising from your use of the app or reliance on AI-generated insights. Our total liability for any claim shall not exceed the amount you paid to us in the 12 months preceding the claim.</p>
+  </section>
+
+  <section id="s13">
+    <h2><span class="num">13</span>Indemnification</h2>
+    <p>You agree to indemnify and hold M2Code harmless from any claims, damages, or expenses arising out of your content, your use of the app, or your violation of these Terms.</p>
+  </section>
+
+  <section id="s14">
+    <h2><span class="num">14</span>Termination</h2>
+    <p>We may suspend or terminate your access if you breach these Terms or misuse the app. You may stop using EX-Ray at any time. Sections that by their nature should survive termination (such as disclaimers and limitations of liability) will continue to apply.</p>
+  </section>
+
+  <section id="s15">
+    <h2><span class="num">15</span>Governing Law</h2>
+    <p>These Terms are governed by the laws of the <strong>Republic of Serbia</strong>, without regard to its conflict-of-laws rules, except where mandatory consumer-protection laws of your country of residence apply.</p>
+  </section>
+
+  <section id="s16">
+    <h2><span class="num">16</span>Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. We will revise the “Last updated” date above and, for material changes, notify you in the app. Continued use after an update means you accept the revised Terms.</p>
+  </section>
+
+  <section id="s17">
+    <h2><span class="num">17</span>Contact</h2>
+    <p>Questions about these Terms? Email us at <a href="mailto:markoandrijevic27@gmail.com">markoandrijevic27@gmail.com</a>.</p>
+  </section>
+
+  <div class="footer">
+    <span>© 2026 M2Code · EX-Ray</span>
+    <span><a href="index.html">Privacy Policy</a> · <a href="#top">Back to top</a></span>
+  </div>
+
+</div>
 </body>
 </html>
